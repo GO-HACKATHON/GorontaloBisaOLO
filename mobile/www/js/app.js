@@ -67,6 +67,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ChatDetailCtrl'
         }
       }
+    })    
+	.state('tab.search', {
+      url: '/search',
+      views: {
+        'tab-search': {
+          templateUrl: 'templates/tab-search.html',
+          controller: 'SearchCtrl'
+        }
+      }
+    })   
+
+	.state('tab.register', {
+      url: '/register',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-register.html',
+          controller: 'authCtrl'
+        }
+      }
+    })
+	.state('tab.login', {
+      url: '/login',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-login.html',
+          controller: 'authCtrl'
+        }
+      }
+    })	
+	.state('tab.person', {
+      url: '/person',
+      views: {
+        'tab-person': {
+          templateUrl: 'templates/tab-person.html',
+          controller: 'personCtrl'
+        }
+      }
     })
  
 

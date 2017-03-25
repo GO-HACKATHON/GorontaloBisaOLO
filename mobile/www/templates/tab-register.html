@@ -1,0 +1,55 @@
+<ion-view view-title="Login" hide-nav-bar="true" view-name="tab-login" class="login-bg">
+  <ion-content class="login-bg" style="background:#FFF;">
+
+    <div class="login-content">
+
+      <div class="light-bg">
+
+        <!-- Logo -->
+        <div class="padding text-center">
+		  
+		  <!-- 
+		  LOGO HERE
+		  <img src="img/logo.png" alt="" /> 
+		  -->
+          <h2 class="dark">
+            TUKAR BUKA
+  		 </h2> 
+          
+          <p class="dark">YOU CAN READ EVERYTHING</p>
+        </div>
+
+        <!-- Login form -->
+        <div class="list padding">
+          <label class="item item-input">
+            <i class="ion-ios-person-outline light icon-label"></i>
+            <input type="text" ng-model='rnama' id='nama' placeholder="Masukan Nama">
+          </label>
+          <label class="item item-input">
+            <i class="ion-ios-email-outline light icon-label"></i>
+            <input type="text" ng-model='remail' id='email' placeholder="Masukan Email">
+          </label>      
+          <label class="item item-input">
+            <i class="ion-ios-locked-outline light icon-label"></i>
+            <input type="password" ng-model='rpassword' id='password' placeholder="Masukan Password">
+          </label>
+        </div>
+        <div class="padding">
+          <button class="button button-block button-balanced" ng-click='registerEvent(rnama,remail,rpassword)'>
+            REGISTER
+          </button>
+		  <center>
+		            <a href="#/tab/login" class="lighxt">Already Registered? <span class="balanced" style='background:#FFF;padding:5px 20px !important;'>LOGIN HERE</span></a>
+
+		  </center>
+        </div>
+
+      </div>
+
+      <!-- Other links -->
+      
+
+    </div>
+
+  </ion-content>
+</ion-view>

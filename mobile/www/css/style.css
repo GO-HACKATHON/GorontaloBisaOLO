@@ -17,12 +17,53 @@
 .buku-item{
 	width:100% !important;
 	margin:0 !important;
+	border-bottom:1px solid #CCCCCC;
 }
+.ftitle{
+	font-weight:bold !important;
+	font-size:80% !important;
+	margin:0 !important;
+	float:left !important;
+	width:100%;
+}
+.fcat{
+	font-size:70% !important;
+	margin:10px 0 !important;
+	float:left !important;
+	width:100%;
+}
+
+
 .buku-item .item-body img{
 	 
-	height: 350px !important;
-	width:100% !important;
+	height: 190px !important;
+	width:80% !important;
 	margin:0 !important;
 	padding:0 !important;
 	background: red !important;
+	float:left;
+	margin-right:15px !important;
+}
+.buku-item .item-detail{
+	float:left !important;
+	width: 50% !important;
+	margin:0 !important;
+	position:relative;
+	top:-10px;
+}
+.buku-item .image{
+	float:left !important;
+	width:50% !important;
+}
+
+
+
+
+
+.list-book img{
+	width:50% !important;
+	float:left !important;
+}
+.list-book {
+	width:100% !important;
 }
