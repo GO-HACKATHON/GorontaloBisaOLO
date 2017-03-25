@@ -1,4 +1,4 @@
-var Bogani = angular.module('starter.controllers', []);
+var Bogani = angular.module('starter.controllers',['ionic','firebase']);
 
 
 

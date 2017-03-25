@@ -1,4 +1,4 @@
-<ion-view view-title="Add Your Book ">
+<ion-view view-title="Add Your Book " ng-init="init()">
 
   <ion-content>
 	
@@ -7,21 +7,22 @@
 		  
 		<div class="list padding">
  		  
+		   
 		  <label class="item item-input">
-            <i class="ion-ios-person-outline light icon-label"></i>
-            <input type="file" ng-model='rnama' id='nama' placeholder="Judul Buku">
+			<img src="" id='imgprev' alt='img' style='display:none' />
+			<input type="file"  onchange="previewFile()" id='file' ng-model='file'  placeholder="Judul Buku">
           </label>
           <label class="item item-input">
             <i class="ion-ios-person-outline light icon-label"></i>
-            <input type="text" ng-model='rnama' id='nama' placeholder="Judul Buku">
+            <input type="text" ng-model='judul' id='judul' placeholder="Judul Buku">
           </label> 
           <label class="item item-input">
             <i class="ion-ios-person-outline light icon-label"></i>
-            <textarea placeholder="deskripsi buku" style='height:150px'></textarea>
+            <textarea placeholder="deskripsi buku" ng-model='desk' id='desk' style='height:150px'></textarea>
           </label>        
         </div>
         <div class="padding">
-          <button class="button button-block button-balanced" ng-click='registerEvent(rnama,remail,rpassword)'>
+          <button class="button button-block button-balanced" ng-click='upload(judul,desk)'>
             UPLOAD YOUR BOOK
           </button>
 		 

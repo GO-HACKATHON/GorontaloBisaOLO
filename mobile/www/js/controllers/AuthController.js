@@ -3,8 +3,19 @@ Bogani.controller('authCtrl', function($rootScope,$ionicPopup,$ionicLoading,$sta
 	$rootScope.isLogin=false
 	firebase.auth().onAuthStateChanged(function(user) {
 		if(user){
-			window.localStorage.setItem('mid',user.uid);
-			window.location.href='index.html';
+			setTimeout(function(){
+				
+				window.localStorage.setItem('mid',user.uid);
+				
+				firebase.database().ref('members/'+user.uid).once('value',function(sn){
+					var m     = sn.val();
+					var uname = m.name;
+					window.localStorage.setItem('mname',uname);
+					window.location.href='index.html';
+				});
+				
+			},2000);
+			
 		}else{
 			firebase.auth().signOut();
 		}
@@ -97,11 +108,24 @@ Bogani.controller('authCtrl', function($rootScope,$ionicPopup,$ionicLoading,$sta
 				template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Tunggu Sadiki... !',
 			}); 
 			
-			firebase.auth().createUserWithEmailAndPassword(email,pass).catch(function(error) {
+			firebase.auth().createUserWithEmailAndPassword(email,pass).
+			then(function(firebaseUser){
+				  
+				  var u = firebaseUser.uid;
+				  var dd = {
+						'address':'',
+						'email':email,
+						'image':'',
+						'name':nama,
+				  };
+				  firebase.database().ref('members').child(u).set(dd);
+			}).
+			catch(function(error) {
+				
 				  $ionicLoading.hide();
 				  var errorCode = error.code;
 				  var errorMessage = error.message;
-				  $scope.popMsg(errorMessage,"Error");
+				  $scope.popMsg(errorMessage,"Error");	
 				  
 			});
 			

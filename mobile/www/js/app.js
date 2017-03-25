@@ -16,7 +16,7 @@ firebase.initializeApp(config);
 
 
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'firebase','starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform,$rootScope,$state,$ionicPopup) {
   $ionicPlatform.ready(function() {
@@ -64,7 +64,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	   });
 	   
    }
-  
+   /* GLOBAL VARIABEL */
+   $rootScope.tr = {};
   
   
   
@@ -195,6 +196,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         'tab-dash': {
           templateUrl: 'templates/tab-switch-detail.html',
           controller: 'switchCtrl'
+        }
+      }
+    })	
+	.state('tab.swaparea', {
+      url: '/swaparea',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-swaparea.html',
+          controller: 'swapareaCtrl'
         }
       }
     })

@@ -1,4 +1,4 @@
-<ion-view view-title="TukarBuku">
+<ion-view view-title="TukarBuku" ng-init="init()">
   <ion-nav-bar align-title="left">
     <ion-nav-back-button class="button-icon ion-arrow-left-c">
     </ion-nav-back-button>
@@ -12,42 +12,48 @@
 
   </ion-nav-bar>
   <ion-content>
-<div class="list card buku-item">
+  
+	<ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+	</ion-refresher>  
+<div class="list card buku-item" ng-repeat="record in records">
 
   <div class="item item-avatar">
     <img src="img/adam.jpg">
-    <h3>Marty McFly</h3>
-	<span class='fsm abuabu'>November 05, 1955</span>
+    <h3>{{record.name}}</h3>
+	<span class='fsm abuabu'>{{record.timesend}}</span>
   </div>
 
   <div class="item item-body">
 	
 	<div class="col col-100">
 	    <div class="image">
-		  <img src="img/buku/b1.jpg">  
+		  <img ng-src="{{record.image}}">  
 		</div>
 		<div class='item-detail'>
 			<div class='hitam'>
-				<span class="ftitle">The Tittle Of book avatas the lengend</span> 
+				<span class="ftitle">{{record.title}}</span> 
 				<span class="fcat">ROMANCE</span>
 			</div>
 			<p>
 			 
-			  <a href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> 15 k</a>
-			  <a href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> 3 K</a>
+			  <a ng-if="records.likes > 0 " href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> {{record.likes}}</a>
+			  <a ng-if="records.requests > 0 "  href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> {{record.requests}}</a>
 			 
 			  <br />
-			  This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+			  {{record.desk}}...
 			</p>
 			<p class='fmed'>
 			  <a href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i></a>
-			  <a href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i></a>
+			  <a href="javacript:;void(0)" ng-click="switch_(record.id,record.memberid)" class="subdued bold"><i class="icon ion-arrow-swap"></i></a>
 			</p>
 		</div> 
 	</div>
   </div>
 
 </div> 
+ 
   
   
   
