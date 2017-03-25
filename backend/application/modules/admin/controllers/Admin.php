@@ -11,6 +11,7 @@ class Admin extends MX_Controller {
 		$this->load->model('master_model/m_web');
 		$this->load->model('master_model/m_buku');
 		$this->load->model('master_model/m_member');
+		$this->load->model('master_model/m_tukar');
 		//----------------------------------------------
 		//	Load Helper
 			$this->load->helper("firebase");
@@ -101,8 +102,8 @@ class Admin extends MX_Controller {
 		$data['shorttext']	=	"Tukar Buku";
 		$data['brand']		=	$this->m_web->title();
 		
-
-		
+		//	Data Set
+		$data['daftarTukar']	=	$this->m_tukar->all();
 		
 		//	Fitur alert
 		$data['alert']			=	"off";

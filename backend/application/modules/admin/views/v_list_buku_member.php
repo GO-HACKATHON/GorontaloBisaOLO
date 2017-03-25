@@ -22,7 +22,7 @@
 			<td align="center"><?php echo $no?></td>
 			<td><?php echo $buku->data_buku->book_title?></td>
 			<td align="center">
-				<a href="#" data-toggle="modal" data-target="#modal<?php echo sha1("Histori Like |".$buku->kode)?>" class="label label-<?php echo $class?>"><?php echo $buku->data_buku->likes?> Suka </a>
+				<a href="#" data-toggle="modal" data-target="#modal<?php echo sha1("Histori Like |".$buku->kode)?>" class="label label-<?php echo $class?>"><?php echo $buku->data_buku->likes?> Menyukai </a>
 			</td>
 			<td align="center">
 				<a href="#" data-toggle="modal" data-target="#modal<?php echo sha1("Edit Buku |".$buku->kode)?>">Edit</a> | 
@@ -82,7 +82,7 @@
 							<!-- heading modal -->
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title"><i class="fa fa-heart"></i> Likes</h4>
+								<h4 class="modal-title" style="color:#c40d20"><i class="fa fa-heart"></i> Likes</h4>
 							</div>
 							
 							<!-- body modal -->

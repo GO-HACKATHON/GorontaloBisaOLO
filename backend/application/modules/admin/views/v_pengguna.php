@@ -4,7 +4,7 @@
 		<tr>
 			<td align="center"><b>No</b></td>
 			<td align="center"><b>Nama</b></td>
-			<td align="center"><b><i class="fa fa-book"></i>  Jumlah Buku</b></td>
+			<td align="center"><b><i class="fa fa-book"></i>  Buku yang dimiliki</b></td>
 		</tr>
 		<?php
 			$no	=	1;

@@ -65,7 +65,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="" style="color:#fff"><i class="fa fa-fw fa-dashboard"></i> Beranda</a>
+                        <a href="<?php echo site_url("admin")?>" style="color:#fff"><i class="fa fa-fw fa-dashboard"></i> Beranda</a>
                     </li>
                     <li>
                         <a href="<?php echo site_url("admin/member")?>" style="color:#fff"><i class="fa fa-fw fa-user"></i> Member</a>
