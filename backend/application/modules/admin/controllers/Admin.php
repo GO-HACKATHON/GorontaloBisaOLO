@@ -9,6 +9,7 @@ class Admin extends MX_Controller {
         parent::__construct();
 		//	Load Model
 		$this->load->model('master_model/m_web');
+		$this->load->model('master_model/m_buku');
 		//----------------------------------------------
 		//	Load Helper
 			$this->load->helper("firebase");
@@ -84,9 +85,13 @@ class Admin extends MX_Controller {
 	public function firebase(){
 		$url	=	"https://tukarbuku-92a26.firebas­eio.com/";
 		$token	=	"6BhMIDRhR3nzw9vk1s5iuVisoavyL8AKPZ6LpPEe";
-		$path	=	"/books";
+		$path	=	"";
 		$f	=	firebase($url,$token,$path);
-		echo"<pre>";print_r($f->get('books/001'));echo"</pre>";
+		echo"<pre>";print_r(json_decode($f->get('books/001')));echo"</pre>";
+	}
+	
+	public function tesModFirebase(){
+		echo"<pre>";print_r($this->m_buku->byMember("axamaskak31312"));echo"</pre>";
 	}
 
 }  
