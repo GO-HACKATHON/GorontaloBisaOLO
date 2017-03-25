@@ -78,12 +78,18 @@ class Admin extends MX_Controller {
 		$data['title']		=	$this->m_web->brand();	
 		$data['shorttext']	=	"Buku";
 		$data['brand']		=	$this->m_web->title();
-
+		
+		//	Data Set
+		$data['members']		=	$this->m_member->all();
+		
 		//	Fitur alert
 		$data['alert']			=	"off";
 		$data['alert_msg']		=	"Alert untuk aksi";
 		$data['alert_class']	=	"success";
 		//-----------------------------------------------
+		
+		//	Data Set
+		$data['dataBuku']	=	$this->m_buku->all();
 		
 		$data['content']		=	$folder."/v_buku";	
 		$this->load->view("master/index",$data);
@@ -94,7 +100,10 @@ class Admin extends MX_Controller {
 		$data['title']		=	$this->m_web->brand();	
 		$data['shorttext']	=	"Tukar Buku";
 		$data['brand']		=	$this->m_web->title();
+		
 
+		
+		
 		//	Fitur alert
 		$data['alert']			=	"off";
 		$data['alert_msg']		=	"Alert untuk aksi";

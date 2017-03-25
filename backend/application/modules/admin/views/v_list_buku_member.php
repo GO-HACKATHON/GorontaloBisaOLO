@@ -5,7 +5,7 @@
 		<tr>
 			<td align="center"><b>No</b></td>
 			<td align="center"><b>Nama Buku</b></td>
-			<td align="center"><b><i class="fa fa-heart"></i></b></td>
+			<td align="center"><b><i class="fa fa-heart" style="color:#c40d20"></i></b></td>
 			<td align="center"><b>#</b></td>
 		</tr>
 		<?php

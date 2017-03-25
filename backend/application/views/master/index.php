@@ -65,16 +65,16 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href=""><i class="fa fa-fw fa-dashboard"></i> Beranda</a>
+                        <a href="" style="color:#fff"><i class="fa fa-fw fa-dashboard"></i> Beranda</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url("admin/member")?>"><i class="fa fa-fw fa-user"></i> Member</a>
+                        <a href="<?php echo site_url("admin/member")?>" style="color:#fff"><i class="fa fa-fw fa-user"></i> Member</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url("admin/buku")?>"><i class="fa fa-fw fa-book"></i> Buku</a>
+                        <a href="<?php echo site_url("admin/buku")?>" style="color:#fff"><i class="fa fa-fw fa-book"></i> Buku</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url("admin/transaksi_tukar")?>"><i class="fa fa-fw fa-tags"></i> Transaksi Tukar</a>
+                        <a href="<?php echo site_url("admin/transaksi_tukar")?>" style="color:#fff"><i class="fa fa-fw fa-tags"></i> Transaksi Tukar</a>
                     </li>
                 </ul>
             </div>
@@ -83,7 +83,7 @@
 
         <div id="page-wrapper">
 
-            <div class="container-fluid" >
+            <div class="container-fluid" style="height:700px;">
 
                 <!-- Page Heading -->
                 <div class="row" >
