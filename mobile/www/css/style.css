@@ -1,0 +1,28 @@
+/* Empty. Add your own CSS if you like */
+
+
+.fsm{
+	font-size:80% !important;
+}
+.fmed{
+	font-size:150% !important;
+}
+.abuabu{
+	color:#999;
+}
+.bold{
+	color:#333;
+	font-weight:bold;
+}
+.buku-item{
+	width:100% !important;
+	margin:0 !important;
+}
+.buku-item .item-body img{
+	 
+	height: 350px !important;
+	width:100% !important;
+	margin:0 !important;
+	padding:0 !important;
+	background: red !important;
+}
