@@ -104,6 +104,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'personCtrl'
         }
       }
+    })	
+	.state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-person': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'personCtrl'
+        }
+      }
+    })	
+	.state('tab.notif', {
+      url: '/notif',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-notif.html',
+          controller: 'notifCtrl'
+        }
+      }
+    })	
+	.state('tab.switch', {
+      url: '/switch',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-switch-detail.html',
+          controller: 'switchCtrl'
+        }
+      }
     })
  
 

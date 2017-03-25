@@ -62,3 +62,14 @@
 .list-book {
 	width:100% !important;
 }
+.bg{
+	font-size:200% !important;
+}
+
+#yourbook .list-book img{
+	width: 100% !important;
+	
+}
+#switch-detail{
+	padding:20px 0 !important;
+}
