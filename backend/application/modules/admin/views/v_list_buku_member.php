@@ -22,7 +22,7 @@
 			<td align="center"><?php echo $no?></td>
 			<td><?php echo $buku->data_buku->book_title?></td>
 			<td align="center">
-				<span class="label label-<?php echo $class?>"><?php echo $buku->data_buku->likes?> Suka </span>
+				<a href="#" data-toggle="modal" data-target="#modal<?php echo sha1("Histori Like |".$buku->kode)?>" class="label label-<?php echo $class?>"><?php echo $buku->data_buku->likes?> Suka </a>
 			</td>
 			<td align="center">
 				<a href="#" data-toggle="modal" data-target="#modal<?php echo sha1("Edit Buku |".$buku->kode)?>">Edit</a> | 
@@ -70,6 +70,32 @@
 										<button type="submit" class="btn btn-primary icon-btn"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update</button> 
 									</div>
 								</form>
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			<div id="modal<?php echo sha1("Histori Like |".$buku->kode)?>" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- konten modal-->
+						<div class="modal-content">
+							<!-- heading modal -->
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title"><i class="fa fa-heart"></i> Likes</h4>
+							</div>
+							
+							<!-- body modal -->
+							<div class="modal-body">
+									<?php
+										foreach($this->m_buku->historiLikeByBuku($buku->kode)->likes_history as $kode => $likes){
+											$dataLike	=	$this->m_buku->likeByKode($buku->kode,$kode);
+											$dataMember	=	$this->m_member->byId($dataLike->memberid);
+									?>
+										<i class="fa fa-user"></i> <?php echo $dataMember->data_member->name;?>
+									<?php
+										}
+									?>
 							</div>
 						</div>
 				</div>

@@ -49,6 +49,18 @@ class M_buku extends MY_Model {
 		return json_decode(json_encode($dataBukuMember));
 	}
 	
+	public function historiLikeByBuku($kode){
+		$dataBuku	=	$this->byKode($kode);
+		return $dataBuku;
+	}
+	
+	public function likeByKode($kodeBuku,$kodeLike){
+		$path	=	"";
+		$f		=	firebase($this->urlFirebase,$this->tokenFirebase,$path);
+		//echo"<pre>";print_r(json_decode($f->get('books/'.$no)));echo"</pre>";
+		return json_decode($f->get('books/'.$kodeBuku.'/likes_history/'.$kodeLike));
+	}
+	
 	//	Proses
 	public function update_buku($kode,$dataArray){
 		$path	=	'books/'.$kode;
