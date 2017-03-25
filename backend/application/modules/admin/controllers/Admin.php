@@ -88,11 +88,7 @@ class Admin extends MX_Controller {
 		$data['content']		=	$folder."/v_buku";	
 		$this->load->view("master/index",$data);
 	}
-	
-	public function edit_buku($kode){
-		
-	}
-	
+
 	public function transaksi_tukar(){
 		$folder				=	"admin";
 		$data['title']		=	$this->m_web->brand();	

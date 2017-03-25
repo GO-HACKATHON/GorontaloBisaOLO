@@ -5,7 +5,6 @@
 			<td align="center"><b>No</b></td>
 			<td align="center"><b>Nama</b></td>
 			<td align="center"><b>Jumlah Buku</b></td>
-			<td align="center"><b>#</b></td>
 		</tr>
 		<?php
 			$no	=	1;
@@ -22,10 +21,6 @@
 			<td><?php echo $m->name?></td>
 			<td align="center">
 				<a href="<?php echo site_url("admin/list_buku_member/".$id)?>" class="label label-<?php echo $class?>"><?php echo count(($bukuMember));?> Buku</a>
-			</td>
-			<td align="center">
-				<a href="">Edit</a> | 
-				<a href="">Hapus</a>
 			</td>
 		</tr>
 		<?php

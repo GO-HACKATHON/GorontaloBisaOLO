@@ -31,7 +31,7 @@ class M_buku extends MY_Model {
 		$path	=	"";
 		$f		=	firebase($this->urlFirebase,$this->tokenFirebase,$path);
 		//echo"<pre>";print_r(json_decode($f->get('books/'.$no)));echo"</pre>";
-		return json_decode($f->get('books/'.$no));		
+		return json_decode($f->get('books/'.$kode));		
 	}
 	
 	public function byMember($id){
@@ -47,6 +47,19 @@ class M_buku extends MY_Model {
 		}
 		
 		return json_decode(json_encode($dataBukuMember));
+	}
+	
+	//	Proses
+	public function update_buku($kode,$dataArray){
+		$path	=	'books/'.$kode;
+		$f		=	firebase($this->urlFirebase,$this->tokenFirebase,$path);
+		return $f->update($path,$dataArray); 
+	}
+	
+	public function hapus_buku($kode){
+		$path	=	'books/'.$kode;
+		$f		=	firebase($this->urlFirebase,$this->tokenFirebase,$path);
+		return $f->delete($path); 
 	}
 	
 }
