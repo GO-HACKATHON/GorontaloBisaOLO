@@ -37,7 +37,7 @@
 .buku-item .item-body img{
 	 
 	height: 190px !important;
-	width:80% !important;
+	width:90% !important;
 	margin:0 !important;
 	padding:0 !important;
 	background: red !important;
@@ -55,11 +55,6 @@
 	float:left !important;
 	width:50% !important;
 }
-
-
-
-
-
 .list-book img{
 	width:50% !important;
 	float:left !important;

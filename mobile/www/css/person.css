@@ -1,0 +1,41 @@
+
+.full-bg{
+
+	width:100%;
+	height:230px;
+	background-color:#CCCCCC;	
+	
+}
+#img-wrap{
+	width:100px !important;
+	overflow:hidden;
+	height:100px;
+	position:relative;
+	top:30px;
+	border-radius:50%;
+}
+.person-detail{
+
+	float:left;
+	width:100%;
+	margin-top:40px;
+}
+.person-detail .uid{
+	font-size:100% !important;
+	width:100% !important;
+	color:#333;
+	display:block;
+}
+.person-detail .name{
+	font-size:130% !important;
+	display:block;
+	margin-bottom:5px !important;
+}
+.person-detail .tukar{
+	font-size:130% !important;
+	display:block;
+	margin-bottom:5px !important;
+}
+.centerPerson{
+	margin:10px 0 !important;	
+}
