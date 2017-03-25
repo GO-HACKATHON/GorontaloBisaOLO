@@ -1,9 +1,53 @@
 <ion-view view-title="Account">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+
+    <!--Profile picture-->
+	<div class="full-bg">
+		<center> 
+			<div id="img-wrap"> 
+				<img width='100' src="img/adam.jpg" alt="" />
+			</div>
+			<div class="person-detail">
+				<span class="name">Candra A. Pinuyut</span>
+				<span class="uid">@CandraPinuyut</span>
+ 			</div>
+		</center>
+	</div>
+
+    <!--Edit profile setting-->
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label balanced">Name</span>
+        <input type="text" ng-model="user.name">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label balanced">Phone</span>
+        <input type="text" ng-model="user.phone">
+      </label> 
+	  <label class="item item-input item-stacked-label">
+        <span class="input-label balanced">Address</span>
+        <input type="text" ng-model="user.phone">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label balanced">Email</span>
+        <input type="text" ng-model="user.email">
+      </label>    
+	  <label class="item item-input item-stacked-label">
+        <span class="input-label balanced">Password</span>
+        <input type="text" ng-model="user.email">
+      </label>  
+	 
+    </div>
+
+    <!--Action buttons-->
+    <div class="padding">
+      <button class="button button-block button-balanced"  >SIMPAN</button>
+		<center> 
+			<strong>OR</strong>
+		</center>
+      <button class="button button-block button-positive" >LOGOUT</button>
+     </div>
+
+  
   </ion-content>
 </ion-view>
