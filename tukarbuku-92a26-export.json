@@ -1,0 +1,51 @@
+{
+  "books" : {
+    "001" : {
+      "book_title" : "",
+      "image" : "",
+      "likes" : 0,
+      "likes_history" : {
+        "72917921" : {
+          "memberid" : "axamaskak31312",
+          "timestamps" : ""
+        }
+      },
+      "memberid" : "axamaskak31312"
+    }
+  },
+  "members" : {
+    "axamaskak31312" : {
+      "address" : "",
+      "image" : ""
+    }
+  },
+  "switch_books" : {
+    "137129837w71" : {
+      "books" : {
+        "book_master_id" : 27179821,
+        "book_request" : {
+          "01" : {
+            "book_id" : "axamaskak31312",
+            "date_add" : ""
+          },
+          "02" : {
+            "book_id" : 1728812,
+            "date_add" : ""
+          }
+        }
+      },
+      "chats" : "",
+      "date_approval" : "",
+      "date_done" : "",
+      "date_request_send" : "",
+      "swith_status" : "",
+      "tambah_bayar" : {
+        "bayar_status" : "",
+        "bayar_value" : {
+          "prices" : "",
+          "stattus" : ""
+        }
+      }
+    }
+  }
+}
