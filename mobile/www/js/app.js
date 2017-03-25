@@ -5,9 +5,20 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+ var config = {
+    apiKey: "AIzaSyA978yf2RnagLUBnXf9_CcAsOKyQ5_k5Ow",
+    authDomain: "tukarbuku-92a26.firebaseapp.com",
+    databaseURL: "https://tukarbuku-92a26.firebaseio.com",
+    storageBucket: "tukarbuku-92a26.appspot.com",
+    messagingSenderId: "859493956464",
+  };
+firebase.initializeApp(config);
+
+
+
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$rootScope,$state,$ionicPopup) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,9 +32,55 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleDefault();
     }
   });
+  
+   //app js 
+   firebase.auth().onAuthStateChanged(function(user) {
+	   if(user){
+		 $rootScope.isLogin=true;
+	   }else{
+		    $rootScope.isLogin=false;
+		   $state.go('tab.login');
+	   }
+   });
+   
+   $rootScope.logout = function(){
+		var confirmPopup = $ionicPopup.confirm({
+			title: 'Sure to Logout?',
+			buttons: [
+				{
+						text: 'No',
+								onTap:function(e){
+									
+								}
+							  },
+							  {
+								text: 'Yes',
+								type: 'button-assertive',
+								onTap: function(e) {
+									firebase.auth().signOut();
+								}
+							  }
+						]
+	   });
+	   
+   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+
+
+ 
+   $ionicConfigProvider.tabs.position('bottom'); // other values: top
+  
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -46,6 +103,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
         controller: 'DashCtrl'
+      }
+    }
+  })  
+  .state('tab.addbook', {
+    url: '/addbook',
+    views: {
+      'tab-upload': {
+        templateUrl: 'templates/tab-addbook.html',
+        controller: 'BookCtrl'
       }
     }
   })
@@ -81,7 +147,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	.state('tab.register', {
       url: '/register',
       views: {
-        'tab-dash': {
+        'tab-register': {
           templateUrl: 'templates/tab-register.html',
           controller: 'authCtrl'
         }
@@ -90,7 +156,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	.state('tab.login', {
       url: '/login',
       views: {
-        'tab-dash': {
+        'tab-login': {
           templateUrl: 'templates/tab-login.html',
           controller: 'authCtrl'
         }

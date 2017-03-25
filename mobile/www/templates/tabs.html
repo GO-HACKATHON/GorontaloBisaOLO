@@ -3,22 +3,33 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+<ion-tabs class="tabs-icon-top tabs-color-active-positive"   >
 
   <!-- Dashboard Tab -->
-   <ion-tab title="" icon-off="ion-ios-book" icon-on="ion-ios-book" href="#/tab/dash">
+   <ion-tab ng-if="isLogin==false" title="" icon-off="ion-person" icon-on="ion-person" href="#/tab/login">
+    <ion-nav-view name="tab-login"></ion-nav-view>
+  </ion-tab>
+  
+  <ion-tab ng-if="isLogin==false"  title="" icon-off="ion-android-menu" icon-on="ion-android-menu" href="#/tab/register">
+    <ion-nav-view name="tab-register"></ion-nav-view>
+  </ion-tab>   
+  
+  
+  
+  <ion-tab  ng-if="isLogin==true"  title="" icon-off="ion-android-document" icon-on="ion-android-document" href="#/tab/dash">
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
-
-  <ion-tab title="" icon-off="ion-ios-search" icon-on="ion-ios-search" href="#/tab/search">
+  
+  <ion-tab ng-if="isLogin==true"  title="" icon-off="ion-search" icon-on="ion-search" href="#/tab/search">
     <ion-nav-view name="tab-search"></ion-nav-view>
   </ion-tab>
-
-  <!-- Chats Tab -->
-  <ion-tab title="" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
-  </ion-tab>  
-  <ion-tab title="" icon-off="ion-ios-person" icon-on="ion-ios-person" href="#/tab/person">
+  <ion-tab ng-if="isLogin==true"  title="" icon-off="ion-plus" icon-on="ion-plus" href="#/tab/addbook">
+    <ion-nav-view name="tab-upload"></ion-nav-view>
+  </ion-tab>
+ 
+ 
+ 
+  <ion-tab ng-if="isLogin==true"  title="" icon-off="ion-person" icon-on="ion-ios-person" href="#/tab/person">
     <ion-nav-view name="tab-person"></ion-nav-view>
   </ion-tab> 
 

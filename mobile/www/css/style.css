@@ -73,3 +73,18 @@
 #switch-detail{
 	padding:20px 0 !important;
 }
+.login-content{
+	margin-top:30px !important;
+}
+.login-bg{
+	width: 100% !important;
+	margin:auto !important;
+	padding:10px !important;
+}
+.nobor:hover{
+	text-decoration:underline;
+}
+.nobor{
+	text-decoration:none;
+	font-weight:bold;
+}
