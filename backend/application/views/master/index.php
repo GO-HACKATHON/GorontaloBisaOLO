@@ -68,7 +68,7 @@
                         <a href=""><i class="fa fa-fw fa-dashboard"></i> Beranda</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url("admin/pengguna")?>"><i class="fa fa-fw fa-user"></i> Pengguna</a>
+                        <a href="<?php echo site_url("admin/member")?>"><i class="fa fa-fw fa-user"></i> Member</a>
                     </li>
                     <li>
                         <a href="<?php echo site_url("admin/buku")?>"><i class="fa fa-fw fa-book"></i> Buku</a>

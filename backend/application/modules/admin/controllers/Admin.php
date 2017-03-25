@@ -10,6 +10,7 @@ class Admin extends MX_Controller {
 		//	Load Model
 		$this->load->model('master_model/m_web');
 		$this->load->model('master_model/m_buku');
+		$this->load->model('master_model/m_member');
 		//----------------------------------------------
 		//	Load Helper
 			$this->load->helper("firebase");
@@ -34,12 +35,15 @@ class Admin extends MX_Controller {
 	
 	}
 	
-	public function pengguna(){
+	public function member(){
 		$folder				=	"admin";
 		$data['title']		=	$this->m_web->brand();	
-		$data['shorttext']	=	"Pengguna";
+		$data['shorttext']	=	"Member";
 		$data['brand']		=	$this->m_web->title();
-
+		
+		//	Data set
+		$data['members']	=	$this->m_member->all();
+		
 		//	Fitur alert
 		$data['alert']			=	"off";
 		$data['alert_msg']		=	"Alert untuk aksi";
@@ -47,6 +51,25 @@ class Admin extends MX_Controller {
 		//-----------------------------------------------
 		
 		$data['content']		=	$folder."/v_pengguna";	
+		$this->load->view("master/index",$data);
+	}
+	
+	public function list_buku_member($id){
+		$folder				=	"admin";
+		$data['title']		=	$this->m_web->brand();	
+		$data['shorttext']	=	"Daftar Buku Member";
+		$data['brand']		=	$this->m_web->title();
+		
+		//	Data set
+		$data['members']	=	$this->m_member->byId($id);
+		
+		//	Fitur alert
+		$data['alert']			=	"off";
+		$data['alert_msg']		=	"Alert untuk aksi";
+		$data['alert_class']	=	"success";
+		//-----------------------------------------------
+		
+		$data['content']		=	$folder."/v_list_buku_member";	
 		$this->load->view("master/index",$data);
 	}
 	
@@ -64,6 +87,10 @@ class Admin extends MX_Controller {
 		
 		$data['content']		=	$folder."/v_buku";	
 		$this->load->view("master/index",$data);
+	}
+	
+	public function edit_buku($kode){
+		
 	}
 	
 	public function transaksi_tukar(){
