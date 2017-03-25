@@ -1,0 +1,1 @@
+Transaksi tukar
