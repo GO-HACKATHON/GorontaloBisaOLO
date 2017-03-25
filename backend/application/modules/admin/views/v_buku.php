@@ -56,7 +56,7 @@
 				</div>
 							
 				<!-- body modal -->
-				<div class="modal-body">
+				<div class="modal-body" align="center">
 					<?php
 						if($buku->image==""){
 							echo "<span class='label label-danger'>Don't found picture</span>";
