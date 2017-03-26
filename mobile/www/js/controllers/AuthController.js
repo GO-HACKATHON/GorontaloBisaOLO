@@ -159,7 +159,7 @@ Bogani.controller('authCtrl', function($rootScope,$ionicPopup,$ionicLoading,$sta
     $scope.verifikasi = function(kode){
 			
 		$ionicLoading.show({
-			template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Tunggu Sadiki... !'
+			template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Loading... '
 		});
 		var datax = {
  			nohp:$rootScope.auth.nohp,
