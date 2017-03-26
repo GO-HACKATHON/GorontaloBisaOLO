@@ -6,7 +6,7 @@ function previewFile(){
 
    reader.onloadend = function () {
 	   $("#imgprev").attr('src',reader.result);
-	   alert($("#imgprev").attr('src'));
+	   //alert($("#imgprev").attr('src'));
 	   
     }
 
