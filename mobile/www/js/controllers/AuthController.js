@@ -30,7 +30,9 @@ Bogani.controller('authCtrl', function($rootScope,$ionicPopup,$ionicLoading,$sta
 			$scope.popMsg("Email yang anda masukan salah","Error");
 			return false;
 		}
- 
+ 		$ionicLoading.show({
+				template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Tunggu Sadiki... !',
+		}); 
 		var sukses = true;
 		const auth = firebase.auth();
 		const prom = auth.signInWithEmailAndPassword(demail,pass).
@@ -116,6 +118,7 @@ Bogani.controller('authCtrl', function($rootScope,$ionicPopup,$ionicLoading,$sta
 						'address':'',
 						'email':email,
 						'image':'',
+						'phone':'',
 						'name':nama,
 				  };
 				  firebase.database().ref('members').child(u).set(dd);

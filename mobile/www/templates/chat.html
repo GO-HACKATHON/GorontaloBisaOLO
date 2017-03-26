@@ -1,0 +1,27 @@
+<!--
+  This template is for 'places' state (app.js)
+  places is a $scope variable in PlacesCtrl (controllers.js)
+  PlacesCtrl pull data from Places model
+-->
+<ion-view view-title="Chat" ng-init="init()">
+	<ion-nav-bar class="bar-balanced" align-title="center">
+	  <!-- Back button -->
+	  <ion-nav-back-button>
+		Back
+	  </ion-nav-back-button>
+
+ 
+
+	</ion-nav-bar>
+
+  <ion-content  >
+  	 <div id="chat-cont" style="float:ledft;height:{{height}}px !important;overflow: scroll;"> 
+
+	 </div>
+     
+  </ion-content>
+  <div id="footer"> 
+	<input type='text' placeholder='Tulis pesan....'  id='pesan_text' ng-model='pesan'  name="" ></textarea>
+	<button class="button icon ion-android-send" ng-click='kirimPesan()'>  </button>
+  </div>  
+</ion-view>

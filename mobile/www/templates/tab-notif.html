@@ -1,4 +1,4 @@
-<ion-view view-title="Switch Request ">
+<ion-view view-title="Exchange Request" ng-init="init()">
 
   <ion-content>
 	
@@ -6,16 +6,16 @@
 	
 	<div id="request"> 
 		
-		<div class="reqlist" ng-Click="detailNotif()" >
+		<div class="reqlist" ng-Click="detailNotif(record.id)" ng-repeat="record in records" >
 			<div class="img"> 
 				<img src="img/adam.jpg" width='40px' alt="" />
 			</div>
 			<div class="content">
 				<p> 
-					Adam Request To Switch your book 
-					<strong>Benggawan Solo</strong>, 
+					<strong>{{record.formername}}</strong>  Request To Exchange your book 
+					<strong>{{record.bookname}}</strong> 
 				</p>
-				<span class="fsm abuabu">Sent 2 Minutes Ago</span>
+				<span class="fsm abuabu">{{record.date_request_send}}</span>
  			</div>
 		</div>
 		

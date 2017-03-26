@@ -1,4 +1,4 @@
-<ion-view view-title="Profile">
+<ion-view view-title="Profile" ng-init="init()">
 
   <ion-nav-bar align-title="left">
  
@@ -20,9 +20,8 @@
 				<img width='100' src="img/adam.jpg" alt="" />
 			</div>
 			<div class="person-detail">
-				<span class="name">Candra A. Pinuyut</span>
-				<span class="uid">@CandraPinuyut</span>
-				<span class="tukar"><i class="icon ion-arrow-swap"></i> 54</span>
+				<span class="name">{{name}}</span>
+				<span class="tukar" style='font-size:100%!important'><i class="icon ion-arrow-swap"></i> 54 Request Exchange</span>
 			</div>
 		</center>
 	</div>
@@ -33,54 +32,34 @@
 		</center>
 		</div>
 	
-		<div class="list card buku-item">
+		<div class="list card buku-item" ng-repeat="record in records">
 			<div class="item item-body">
 			<div class="col col-100">
 				<div class="image">
-				  <img src="img/buku/b1.jpg">  
+					<img ng-src="{{record.image}}">  
 				</div>
 				<div class='item-detail'>
-					<div class='hitam'>
-						<span class="ftitle">The Tittle Of book avatas the lengend</span> 
-						<span class="fcat">ROMANCE</span>
-					</div>
+						<div class='hitam'>
+							<span class="ftitle">{{record.title}}</span> 
+							<span class="fcat">ROMANCE</span>
+						</div>
 					<p>
 					 
-					  <a href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> 15 k</a>
-					  <a href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> 3 K</a>
-					 
-					  <br />
-					  This is a "Facebook" styled Card. The header is created from a Thumbnail List ..
+				  <a ng-if="records.likes > 0 " href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> {{record.likes}}</a>
+				  <a ng-if="records.requests > 0 "  href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> {{record.requests}}</a>
+				 
+						  <br />
+					{{record.desk}}...
 					</p>
-					 
+				   	<span class='fsm abuabu'>{{record.timesend}}</span>
+
 				</div> 
+				 
 			</div>
+			
 		  </div>
 		 </div> 
-		 <div class="list card buku-item">
-			<div class="item item-body">
-			<div class="col col-100">
-				<div class="image">
-				  <img src="img/buku/b1.jpg">  
-				</div>
-				<div class='item-detail'>
-					<div class='hitam'>
-						<span class="ftitle">The Tittle Of book avatas the lengend</span> 
-						<span class="fcat">ROMANCE</span>
-					</div>
-					<p>
-					 
-					  <a href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> 15 k</a>
-					  <a href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> 3 K</a>
-					 
-					  <br />
-					  This is a "Facebook" styled Card. The header is created from a Thumbnail List ..
-					</p>
-					 
-				</div> 
-			</div>
-		  </div>
-		 </div> 
+ 
 	
 	</div>
   

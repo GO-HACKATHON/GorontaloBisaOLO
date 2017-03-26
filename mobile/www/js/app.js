@@ -198,7 +198,8 @@ angular.module('starter', ['ionic', 'firebase','starter.controllers', 'starter.s
           controller: 'switchCtrl'
         }
       }
-    })	
+    })
+ 
 	.state('tab.swaparea', {
       url: '/swaparea',
       views: {

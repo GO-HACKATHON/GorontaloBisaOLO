@@ -38,15 +38,15 @@
 			</div>
 			<p>
 			 
-			  <a ng-if="records.likes > 0 " href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> {{record.likes}}</a>
-			  <a ng-if="records.requests > 0 "  href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> {{record.requests}}</a>
+			  <a ng-if="record.likes > 0 " href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> {{record.likes}} People</a>
+			  <a ng-if="record.requests > 0 "  href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> {{record.requests}}</a>
 			 
 			  <br />
 			  {{record.desk}}...
 			</p>
 			<p class='fmed'>
-			  <a href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i></a>
-			  <a href="javacript:;void(0)" ng-click="switch_(record.id,record.memberid)" class="subdued bold"><i class="icon ion-arrow-swap"></i></a>
+			  <a href="#" ng-click="addLike(record.id,record.memberid)" class="subdued bold"><i class="icon ion-ios-heart-outline"></i></a>
+			  <a href="#" ng-if="record.memberid!=mid" ng-click="switch_(record.id,record.memberid)" class="subdued bold"><i class="icon ion-arrow-swap"></i></a>
 			</p>
 		</div> 
 	</div>

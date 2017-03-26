@@ -1,50 +1,72 @@
-<ion-view view-title="Switch Detail ">
+<ion-view view-title="Switch Detail" ng-init="init()">
 
   <ion-content>
 
 	<div id='switch-detail'>
 
 
-		<center> 
-			<span class='fmed bold'>The title of book</span>
-			<br />
-			<span class='fsmall '>ROMANCE</span>
-		</center>
-	 	<div id="yourbook"> 
-			<div class="list-book">
-				<div class="image">
-				  <img src="img/buku/b1.jpg">  
-				</div> 
-			 </div> 
+		   <div class="item item-body">
+				<center> 
+				<div class="col col-100">
+					<div class="image">
+					  <img ng-src="{{bookform.book_img}}">  
+					</div>
+					<div class='item-detail'>
+						<div class='hitam'>
+							<span class="ftitle">{{bookform.book_title}}</span> 
+							<span class="fcat">ROMANCE</span>
+						</div>
+						<p>
+						 
+						  <a ng-if="records.likes > 0 " href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> {{record.likes}}</a>
+						  <a ng-if="records.requests > 0 "  href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> {{record.requests}}</a>
+						 
+						  <br />
+						  {{bookform.book_desk}}...
+						</p>
+						 
+					</div> 
+				</div>
+				</center>
 		</div>
-	 
-		<center><h2><i class="ion-ios-arrow-thin-up"></i><i class="ion-ios-arrow-thin-down"></i></h2></center>
- 		<div class="list-book">
-			<div class="image">
-			  <img src="img/buku/b1.jpg">  
-			</div> 
-		 </div> 
-		 <div class="list-book">
-			<div class="image">
-			  <img src="img/buku/b1.jpg">  
-			</div> 
-		 </div>   <div class="list-book">
-			<div class="image">
-			  <img src="img/buku/b1.jpg">  
-			</div> 
-		 </div>   <div class="list-book">
-			<div class="image">
-			  <img src="img/buku/b1.jpg">  
-			</div> 
-		 </div>  
+		<center> 
+			<h3>EXCHANGE WITH </h3>
+			<button class="button" class="ion-chatboxes"></i></button>
+		</center>
+   		 <div class="item item-body">
+				<center> 
+				<div class="col col-100">
+					<div class="image">
+					  <img ng-src="{{bookreq.book_img}}">  
+					</div>	
+					<div class='item-detail'>
+						<div class='hitam'>
+							<span class="ftitle">{{bookreq.book_title}}</span> 
+							<span class="fcat">ROMANCE</span>
+						</div>
+						<p>
+						 
+						  <a ng-if="records.likes > 0 " href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> {{record.likes}}</a>
+						  <a ng-if="records.requests > 0 "  href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> {{record.requests}}</a>
+						 
+						  <br />
+						  {{bookform.book_desk}}...
+						</p>
+						 
+					</div> 
+									
+				</div>
+				</center>
+		</div>
+   
 		 <div class="row"> 
 			 <div class="col col-50"> 
-				<button class='button button-positive button-full'>
+				<button ng-click="acceptRequest()" class='button button-positive button-full'>
 					<i class="ion-ios-checkmark-empty bg"></i> 
 				</button>
 			 </div>
 			 <div class="col col-50"> 
-				<button class='button button-assertive button-full'>
+				<button ng-click="rejekRequest()" class='button button-assertive button-full'>
 					<i class="ion-ios-close-empty bg"></i> 
 				</button>
 			 </div>

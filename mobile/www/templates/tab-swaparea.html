@@ -1,4 +1,4 @@
-<ion-view view-title="Profile">
+<ion-view view-title="Swap Area" ng-init="init()">
 
   <ion-nav-bar align-title="left">
  
@@ -22,34 +22,30 @@
 		</center>
 		</div>
 	
-		<div class="list card buku-item">
+		<div class="list card buku-item" ng-repeat="record in records">
 			<div class="item item-body">
 			<div class="col col-100">
 				<div class="image">
-				  <img src="img/buku/b1.jpg">  
+					<img ng-src="{{record.image}}">  
 				</div>
 				<div class='item-detail'>
-					<div class='hitam'>
-						<span class="ftitle">The Tittle Of book avatas the lengend</span> 
-						<span class="fcat">ROMANCE</span>
-					</div>
+						<div class='hitam'>
+							<span class="ftitle">{{record.title}}</span> 
+							<span class="fcat">ROMANCE</span>
+						</div>
 					<p>
 					 
-					  <a href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> 15 k</a>
-					  <a href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> 3 K</a>
-					 
-					  <br />
-					  This is a "Facebook" styled Card. The header is created from a Thumbnail List ..
+				  <a ng-if="records.likes > 0 " href="#" class="subdued bold"><i class="icon ion-ios-heart-outline"></i> {{record.likes}}</a>
+				  <a ng-if="records.requests > 0 "  href="#" class="subdued bold"><i class="icon ion-arrow-swap"></i> {{record.requests}}</a>
+				 
+						  <br />
+					{{record.desk}}...
 					</p>
-				
+					<div class="col-100" style='margin-left:-5px'> 
+						<button ng-click="addSwapBook(record.id)" class='button button-full button-positive'><i class="ion-plus"></i> </button>
+ 					</div>
 				</div> 
-				<div class="row"> 
-					<div class="col-50" style='margin-left:-5px'> 
-						<button class='button button-full button-positive'><i class="ion-plus"></i> ADD SWAP</button>
-					</div>
-					 
-					
-				</div>
+				 
 			</div>
 			
 		  </div>
@@ -58,9 +54,7 @@
 	
 	</div>
   
-	<div class="col-100" style='margin-left:-5px'> 
-		<button class='button button-full button-balanced'><i class="ion-checkmark"></i> SEND REQUEST</button>
-	</div>
+ 
    </ion-content>
   
   

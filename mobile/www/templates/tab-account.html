@@ -1,4 +1,4 @@
-<ion-view view-title="Account">
+<ion-view view-title="Account" ng-init="account()">
   <ion-content>
 
     <!--Profile picture-->
@@ -8,8 +8,7 @@
 				<img width='100' src="img/adam.jpg" alt="" />
 			</div>
 			<div class="person-detail">
-				<span class="name">Candra A. Pinuyut</span>
-				<span class="uid">@CandraPinuyut</span>
+				<span class="name">{{name}}</span>
  			</div>
 		</center>
 	</div>
@@ -18,30 +17,30 @@
     <div class="list">
       <label class="item item-input item-stacked-label">
         <span class="input-label balanced">Name</span>
-        <input type="text" ng-model="user.name">
+        <input type="text" id='nama' value="{{nama}}">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label balanced">Phone</span>
-        <input type="text" ng-model="user.phone">
+        <input type="text" id='phone' value="{{phone}}">
       </label> 
 	  <label class="item item-input item-stacked-label">
         <span class="input-label balanced">Address</span>
-        <input type="text" ng-model="user.phone">
+        <input type="text"  id='address' value="{{address}}">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label balanced">Email</span>
-        <input type="text" ng-model="user.email">
+        <input type="text" id='email' value="{{email}}">
       </label>    
 	  <label class="item item-input item-stacked-label">
         <span class="input-label balanced">Password</span>
-        <input type="text" ng-model="user.email">
+        <input type="password" id='password' >
       </label>  
 	 
     </div>
 
     <!--Action buttons-->
     <div class="padding">
-      <button class="button button-block button-balanced"  >SIMPAN</button>
+      <button ng-click="save()" class="button button-block button-balanced"  >SIMPAN</button>
 		<center> 
 			<strong>OR</strong>
 		</center>
